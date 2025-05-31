@@ -1,0 +1,280 @@
+{
+  "registeredUsers" : [ {
+    "id" : 1,
+    "name" : "mism06",
+    "password" : "Ilia_s_m_85",
+    "email" : "iliasardarm85@gamil.com",
+    "securityQuestion" : {
+      "question" : "Q1",
+      "answer" : "April"
+    },
+    "settingData" : {
+      "musicVolume" : 0.36,
+      "musicEnabled" : true,
+      "playingMusicPath" : "musics/pre_game/Murder_berserk.mp3",
+      "sfxVolume" : 0.5,
+      "sfxEnabled" : true,
+      "autoReloadEnabled" : true,
+      "blackWhiteEnabled" : false,
+      "autoAimEnabled" : false,
+      "playingKeys" : {
+        "32" : 32,
+        "51" : 51,
+        "29" : 29,
+        "46" : 46,
+        "47" : 47
+      }
+    },
+    "score" : 0,
+    "kills" : 0,
+    "liveTime" : 3653,
+    "avatarPath" : "avatars/berserk.jpg",
+    "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
+    "avatarTexture" : {
+      "glTarget" : 3553,
+      "minFilter" : "Nearest",
+      "magFilter" : "Nearest",
+      "width" : 256,
+      "height" : 196,
+      "depth" : 0,
+      "managed" : true,
+      "textureData" : {
+        "width" : 256,
+        "height" : 196,
+        "format" : "RGB888",
+        "type" : "Pixmap",
+        "fileHandle" : {
+          "directory" : false
+        },
+        "managed" : true,
+        "prepared" : false
+      },
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge",
+      "anisotropicFilter" : 1.0,
+      "textureObjectHandle" : 4
+    }
+  }, {
+    "id" : 2,
+    "name" : "ilia01",
+    "password" : "Ilia_s_m_85",
+    "email" : "ilia01@gmail.com",
+    "securityQuestion" : {
+      "question" : "Q1",
+      "answer" : "April"
+    },
+    "settingData" : {
+      "musicVolume" : 0.5,
+      "musicEnabled" : true,
+      "playingMusicPath" : "musics/pre_game/City_of_tears.mp3",
+      "sfxVolume" : 0.5,
+      "sfxEnabled" : true,
+      "autoReloadEnabled" : false,
+      "blackWhiteEnabled" : false,
+      "autoAimEnabled" : false,
+      "playingKeys" : {
+        "32" : 32,
+        "51" : 51,
+        "29" : 29,
+        "46" : 46,
+        "47" : 47
+      }
+    },
+    "score" : 0,
+    "kills" : 0,
+    "liveTime" : 0,
+    "avatarPath" : "avatars/berserk.jpg",
+    "outsideAvatarPath" : "",
+    "avatarTexture" : {
+      "glTarget" : 3553,
+      "minFilter" : "Nearest",
+      "magFilter" : "Nearest",
+      "width" : 725,
+      "height" : 784,
+      "depth" : 0,
+      "managed" : true,
+      "textureData" : {
+        "width" : 725,
+        "height" : 784,
+        "format" : "RGB888",
+        "type" : "Pixmap",
+        "fileHandle" : {
+          "directory" : false
+        },
+        "managed" : true,
+        "prepared" : false
+      },
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge",
+      "anisotropicFilter" : 1.0,
+      "textureObjectHandle" : 5
+    }
+  }, {
+    "id" : 3,
+    "name" : "ilia02",
+    "password" : "Ilia_s_m_85",
+    "email" : "ilia02@gmail.com",
+    "securityQuestion" : {
+      "question" : "Q1",
+      "answer" : "April"
+    },
+    "settingData" : {
+      "musicVolume" : 0.5,
+      "musicEnabled" : true,
+      "playingMusicPath" : "musics/pre_game/City_of_tears.mp3",
+      "sfxVolume" : 0.5,
+      "sfxEnabled" : true,
+      "autoReloadEnabled" : false,
+      "blackWhiteEnabled" : false,
+      "autoAimEnabled" : false,
+      "playingKeys" : {
+        "32" : 32,
+        "51" : 51,
+        "29" : 29,
+        "46" : 46,
+        "47" : 47
+      }
+    },
+    "score" : 0,
+    "kills" : 0,
+    "liveTime" : 0,
+    "avatarPath" : "avatars/guts.jpg",
+    "outsideAvatarPath" : "",
+    "avatarTexture" : {
+      "glTarget" : 3553,
+      "minFilter" : "Nearest",
+      "magFilter" : "Nearest",
+      "width" : 543,
+      "height" : 734,
+      "depth" : 0,
+      "managed" : true,
+      "textureData" : {
+        "width" : 543,
+        "height" : 734,
+        "format" : "RGB888",
+        "type" : "Pixmap",
+        "fileHandle" : {
+          "directory" : false
+        },
+        "managed" : true,
+        "prepared" : false
+      },
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge",
+      "anisotropicFilter" : 1.0,
+      "textureObjectHandle" : 6
+    }
+  }, {
+    "id" : 4,
+    "name" : "ilia03",
+    "password" : "Ilia_s_m_85",
+    "email" : "ilia03@gmail.com",
+    "securityQuestion" : {
+      "question" : "Q1",
+      "answer" : "April"
+    },
+    "settingData" : {
+      "musicVolume" : 0.5,
+      "musicEnabled" : true,
+      "playingMusicPath" : "musics/pre_game/City_of_tears.mp3",
+      "sfxVolume" : 0.5,
+      "sfxEnabled" : true,
+      "autoReloadEnabled" : false,
+      "blackWhiteEnabled" : false,
+      "autoAimEnabled" : false,
+      "playingKeys" : {
+        "32" : 32,
+        "51" : 51,
+        "29" : 29,
+        "46" : 46,
+        "47" : 47
+      }
+    },
+    "score" : 0,
+    "kills" : 0,
+    "liveTime" : 0,
+    "avatarPath" : "avatars/guts.jpg",
+    "outsideAvatarPath" : "",
+    "avatarTexture" : {
+      "glTarget" : 3553,
+      "minFilter" : "Nearest",
+      "magFilter" : "Nearest",
+      "width" : 543,
+      "height" : 734,
+      "depth" : 0,
+      "managed" : true,
+      "textureData" : {
+        "width" : 543,
+        "height" : 734,
+        "format" : "RGB888",
+        "type" : "Pixmap",
+        "fileHandle" : {
+          "directory" : false
+        },
+        "managed" : true,
+        "prepared" : false
+      },
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge",
+      "anisotropicFilter" : 1.0,
+      "textureObjectHandle" : 7
+    }
+  } ],
+  "currentUser" : {
+    "id" : 1,
+    "name" : "mism06",
+    "password" : "Ilia_s_m_85",
+    "email" : "iliasardarm85@gamil.com",
+    "securityQuestion" : {
+      "question" : "Q1",
+      "answer" : "April"
+    },
+    "settingData" : {
+      "musicVolume" : 0.36,
+      "musicEnabled" : true,
+      "playingMusicPath" : "musics/pre_game/Murder_berserk.mp3",
+      "sfxVolume" : 0.5,
+      "sfxEnabled" : true,
+      "autoReloadEnabled" : true,
+      "blackWhiteEnabled" : false,
+      "autoAimEnabled" : false,
+      "playingKeys" : {
+        "32" : 32,
+        "51" : 51,
+        "29" : 29,
+        "46" : 46,
+        "47" : 47
+      }
+    },
+    "score" : 0,
+    "kills" : 0,
+    "liveTime" : 3653,
+    "avatarPath" : "avatars/berserk.jpg",
+    "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
+    "avatarTexture" : {
+      "glTarget" : 3553,
+      "minFilter" : "Nearest",
+      "magFilter" : "Nearest",
+      "width" : 256,
+      "height" : 196,
+      "depth" : 0,
+      "managed" : true,
+      "textureData" : {
+        "width" : 256,
+        "height" : 196,
+        "format" : "RGB888",
+        "type" : "Pixmap",
+        "fileHandle" : {
+          "directory" : false
+        },
+        "managed" : true,
+        "prepared" : false
+      },
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge",
+      "anisotropicFilter" : 1.0,
+      "textureObjectHandle" : 8
+    }
+  },
+  "stayLoggedIn" : true
+}

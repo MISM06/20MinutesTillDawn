@@ -1,0 +1,193 @@
+{
+  "seed" : 1615896642,
+  "player" : {
+    "userId" : 1,
+    "entity" : {
+      "sprite" : {
+        "texture" : {
+          "glTarget" : 3553,
+          "minFilter" : "Nearest",
+          "magFilter" : "Nearest",
+          "width" : 16,
+          "height" : 27,
+          "managed" : true,
+          "depth" : 0,
+          "textureData" : {
+            "width" : 16,
+            "height" : 27,
+            "format" : "RGBA8888",
+            "fileHandle" : {
+              "directory" : false
+            },
+            "type" : "Pixmap",
+            "managed" : true,
+            "prepared" : false
+          },
+          "uwrap" : "ClampToEdge",
+          "vwrap" : "ClampToEdge",
+          "anisotropicFilter" : 1.0,
+          "textureObjectHandle" : 10
+        },
+        "u" : 0.0,
+        "v" : 0.0,
+        "u2" : 1.0,
+        "v2" : 1.0,
+        "regionWidth" : 16,
+        "regionHeight" : 27,
+        "vertices" : [ 0.0, 0.0, -1.7014117E38, 0.0, 1.0, 0.0, 1.64, -1.7014117E38, 0.0, 0.0, 1.0, 1.64, -1.7014117E38, 1.0, 0.0, 1.0, 0.0, -1.7014117E38, 1.0, 1.0 ],
+        "color" : {
+          "r" : 1.0,
+          "g" : 1.0,
+          "b" : 1.0,
+          "a" : 1.0
+        },
+        "packedColor" : -1.7014117E38,
+        "x" : 0.0,
+        "y" : 0.0,
+        "width" : 1.0,
+        "height" : 1.64,
+        "originX" : 0.0,
+        "originY" : 0.0,
+        "rotation" : 0.0,
+        "scaleX" : 1.0,
+        "scaleY" : 1.0,
+        "boundingRectangle" : {
+          "x" : 0.0,
+          "y" : 0.0,
+          "width" : 1.0,
+          "height" : 1.64,
+          "aspectRatio" : 0.6097561
+        },
+        "flipX" : false,
+        "flipY" : false,
+        "regionY" : 0,
+        "regionX" : 0
+      },
+      "animations" : {
+        "size" : 2,
+        "empty" : false
+      },
+      "currentAnimation" : "idle",
+      "time" : 1.6240038,
+      "rightFaceWay" : true,
+      "upFaceWay" : true,
+      "collision" : null,
+      "width" : 1.0,
+      "height" : 1.64,
+      "x" : 0.0,
+      "y" : 0.0,
+      "animationFinished" : true
+    },
+    "x" : 0.0,
+    "y" : 0.0,
+    "hp" : 4,
+    "maxHp" : 4,
+    "speed" : 2.828427,
+    "hero" : "Shana",
+    "gun" : {
+      "type" : "Revolver",
+      "entity" : {
+        "sprite" : {
+          "texture" : {
+            "glTarget" : 3553,
+            "minFilter" : "Nearest",
+            "magFilter" : "Nearest",
+            "width" : 16,
+            "height" : 16,
+            "managed" : true,
+            "depth" : 0,
+            "textureData" : {
+              "width" : 16,
+              "height" : 16,
+              "format" : "RGBA8888",
+              "fileHandle" : {
+                "directory" : false
+              },
+              "type" : "Pixmap",
+              "managed" : true,
+              "prepared" : false
+            },
+            "uwrap" : "ClampToEdge",
+            "vwrap" : "ClampToEdge",
+            "anisotropicFilter" : 1.0,
+            "textureObjectHandle" : 56
+          },
+          "u" : 0.0,
+          "v" : 1.0,
+          "u2" : 1.0,
+          "v2" : 0.0,
+          "regionWidth" : 16,
+          "regionHeight" : 16,
+          "vertices" : [ 0.08824992, 1.1670761, -1.7014117E38, 0.0, 0.0, 0.558801, 0.28470343, -1.7014117E38, 0.0, 1.0, -0.32357168, -0.18584764, -1.7014117E38, 1.0, 1.0, -0.79412276, 0.69652504, -1.7014117E38, 1.0, 0.0 ],
+          "color" : {
+            "r" : 1.0,
+            "g" : 1.0,
+            "b" : 1.0,
+            "a" : 1.0
+          },
+          "packedColor" : -1.7014117E38,
+          "x" : -0.6176609,
+          "y" : -0.009385765,
+          "width" : 1.0,
+          "height" : 1.0,
+          "originX" : 0.5,
+          "originY" : 0.5,
+          "rotation" : -151.96184,
+          "scaleX" : 1.0,
+          "scaleY" : 1.0,
+          "boundingRectangle" : {
+            "x" : -0.79412276,
+            "y" : -0.18584764,
+            "width" : 1.3529238,
+            "height" : 1.3529238,
+            "aspectRatio" : 1.0
+          },
+          "flipX" : false,
+          "flipY" : true,
+          "regionY" : 16,
+          "regionX" : 0
+        },
+        "animations" : {
+          "size" : 2,
+          "empty" : false
+        },
+        "currentAnimation" : "still",
+        "time" : 1.6240038,
+        "rightFaceWay" : true,
+        "upFaceWay" : false,
+        "collision" : null,
+        "width" : 1.0,
+        "height" : 1.0,
+        "x" : -0.6176609,
+        "y" : -0.009385765,
+        "animationFinished" : true
+      },
+      "damage" : 20.0,
+      "projectile" : 1.0,
+      "reloadTime" : 1.0,
+      "maxAmmo" : 6.0,
+      "ammo" : 6.0,
+      "spreedDeg" : 0.0,
+      "lastShotDiff" : 1.6240038,
+      "inShooting" : false,
+      "autoReload" : true,
+      "autoAim" : false
+    },
+    "xp" : 0,
+    "level" : 1,
+    "currentLevelMinXp" : 0,
+    "collision" : {
+      "width" : 0.7,
+      "height" : 1.148,
+      "centerX" : 0.5,
+      "centerY" : 0.7809524,
+      "startX" : 0.15,
+      "startY" : 0.2069524,
+      "endX" : 0.85,
+      "endY" : 1.3549523
+    },
+    "killCount" : 0,
+    "autoAim" : false,
+    "invincible" : true
+  },
+  "chunkManager"
