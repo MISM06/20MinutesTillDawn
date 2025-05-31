@@ -10,18 +10,27 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 
 public class EnemyManager {
+    @JsonIgnore
     private ArrayList<Enemy> trees = new ArrayList<>();
+//    @JsonIgnore
     private ArrayList<Enemy> normalEnemy = new ArrayList<>();
+    @JsonIgnore
     private ArrayList<Boss> bosses = new ArrayList<>();
+    @JsonIgnore
     private ArrayList<AnimatedEntity> xpDrops = new ArrayList<>();
 
     private boolean isShubNiggurathSpawnedTillNow = false;
 
     public EnemyManager() {
+        trees = new ArrayList<>();
+        normalEnemy = new ArrayList<>();
+        bosses = new ArrayList<>();
+        xpDrops = new ArrayList<>();
     }
 
     public void update(float delta) {
@@ -364,4 +373,55 @@ public class EnemyManager {
         else return null;
     }
 
+    public ArrayList<Enemy> getTrees() {
+        return trees;
+    }
+
+    public ArrayList<Enemy> getNormalEnemy() {
+        return normalEnemy;
+    }
+
+    public ArrayList<AnimatedEntity> getXpDrops() {
+        return xpDrops;
+    }
+
+    public boolean isShubNiggurathSpawnedTillNow() {
+        return isShubNiggurathSpawnedTillNow;
+    }
+
+    public float getTentacleLastSpawn() {
+        return tentacleLastSpawn;
+    }
+
+    public float getEyeBatLastSpawn() {
+        return eyeBatLastSpawn;
+    }
+
+    public void setTrees(ArrayList<Enemy> trees) {
+        this.trees = trees;
+    }
+
+    public void setNormalEnemy(ArrayList<Enemy> normalEnemy) {
+        this.normalEnemy = normalEnemy;
+    }
+
+    public void setBosses(ArrayList<Boss> bosses) {
+        this.bosses = bosses;
+    }
+
+    public void setXpDrops(ArrayList<AnimatedEntity> xpDrops) {
+        this.xpDrops = xpDrops;
+    }
+
+    public void setShubNiggurathSpawnedTillNow(boolean shubNiggurathSpawnedTillNow) {
+        isShubNiggurathSpawnedTillNow = shubNiggurathSpawnedTillNow;
+    }
+
+    public void setTentacleLastSpawn(float tentacleLastSpawn) {
+        this.tentacleLastSpawn = tentacleLastSpawn;
+    }
+
+    public void setEyeBatLastSpawn(float eyeBatLastSpawn) {
+        this.eyeBatLastSpawn = eyeBatLastSpawn;
+    }
 }

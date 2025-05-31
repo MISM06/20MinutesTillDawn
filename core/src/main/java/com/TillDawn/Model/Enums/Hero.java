@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,12 +82,16 @@ public enum Hero {
             "textures/Heros/Dasher/run/Run_3 #8344.png")),
         "textures/Heros/Portrait/T_Dasher_Portrait.png")
     ;
-    private final ArrayList<String> idlePath;
+    private ArrayList<String> idlePath;
+    @JsonIgnore
     private ArrayList<Texture> idleTexture = null;
+    @JsonIgnore
     private Array<TextureRegion> idleRegion = null;
 
-    private final ArrayList<String> runPath;
+    private  ArrayList<String> runPath;
+    @JsonIgnore
     private ArrayList<Texture> runTexture = null;
+    @JsonIgnore
     private Array<TextureRegion> runRegion = null;
 
     private final float width;
@@ -96,7 +101,9 @@ public enum Hero {
     private final String description;
 
     private String portraitPath;
+    @JsonIgnore
     private Texture portraitTexture;
+    @JsonIgnore
     private TextureRegion portraitRegion;
     Hero(float widthScale,
          float heightScale,

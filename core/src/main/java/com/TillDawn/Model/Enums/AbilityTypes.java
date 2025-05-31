@@ -3,6 +3,7 @@ package com.TillDawn.Model.Enums;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public enum AbilityTypes {
     Vitality("Vitality", true, 10000, "Max HP +1.", "textures/Abilities/Vitality.png"),
@@ -13,6 +14,7 @@ public enum AbilityTypes {
     ;
     private String name;
     private String iconPath;
+    @JsonIgnore
     private TextureRegion iconRegion;
     private String description;
     private float timeLimit;

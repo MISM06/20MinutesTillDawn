@@ -4,9 +4,13 @@ import com.TillDawn.DragAndDropHandler;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.TillDawn.TillDawn;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3WindowAdapter;
+import com.badlogic.gdx.files.FileHandle;
 
 import java.io.File;
 import java.util.List;
+
+import static com.TillDawn.TillDawn.unrealController;
 
 /** Launches the desktop (LWJGL3) application. */
 public class Lwjgl3Launcher {
@@ -77,6 +81,17 @@ public class Lwjgl3Launcher {
         //// You can change these files; they are in lwjgl3/src/main/resources/ .
         //// They can also be loaded from the root of assets/ .
         configuration.setWindowIcon("libgdx128.png", "libgdx64.png", "libgdx32.png", "libgdx16.png");
+        configuration.setWindowListener(new Lwjgl3WindowAdapter() {
+            @Override
+            public void filesDropped(String[] files) {
+                for (String filePath : files) {
+                    FileHandle file = new FileHandle(filePath);
+                    if (unrealController != null)
+                        unrealController.onFileDropped(file);
+                }
+            }
+        });
+
         return configuration;
     }
 }

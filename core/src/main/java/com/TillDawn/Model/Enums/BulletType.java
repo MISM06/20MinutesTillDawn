@@ -3,13 +3,16 @@ package com.TillDawn.Model.Enums;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public enum BulletType {
     normal("textures/Bullets/bullet.png", 1f, 1f),
     EyeBatEye("textures/Enemies/Eyebat/bullet/T_EyeBat_EM.png", 0.45f, 0.45f),
     ;
     private String bulletTexturePath;
+    @JsonIgnore
     private Texture bulletTexture;
+    @JsonIgnore
     private TextureRegion bulletTextureRegion;
     private float width;
     private float height;

@@ -13,8 +13,9 @@ public class Player {
     @JsonIgnore
     private User user;
 
-
+    @JsonIgnore
     private AnimatedEntity entity;
+    private Collision collision;
     private float x;
     private float y;
     private int hp;
@@ -25,7 +26,6 @@ public class Player {
     private int xp;
     private int level;
     private int currentLevelMinXp;
-    private Collision collision;
     private int killCount = 0;
 
     private boolean autoAim = false;
@@ -54,13 +54,13 @@ public class Player {
     }
 
     public void setX(float x) {
-        entity.getSprite().translateX(x - this.x);
+        if (entity != null) entity.getSprite().translateX(x - this.x);
         collision.move(x - this.x, 0);
         this.x = x;
     }
 
     public void setY(float y) {
-        entity.getSprite().translateY(y - this.y);
+        if (entity != null) entity.getSprite().translateY(y - this.y);
         collision.move(0, y - this.y);
         this.y = y;
     }
@@ -73,11 +73,20 @@ public class Player {
         return y;
     }
 
+    public void prePareEntity() {
+        entity = new AnimatedEntity(x, y, 1, 1);
+        entity.addAnimation("idle", new Animation<>(0.15f, hero.getIdleRegion()));
+        entity.addAnimation("run", new Animation<>(0.1f / (float) Math.sqrt(speed), hero.getRunRegion()));
+        entity.setAnimation("idle");
+        entity.setSize(hero.getWidth(), hero.getHeight());
+    }
+
     public void setHero(Hero hero) {
         this.hero = hero;
         hp = hero.getHp();
         maxHp = hp;
         speed = (float) Math.sqrt(hero.getSpeed() * Math.sqrt(hero.getSpeed()));
+        if (entity == null) prePareEntity();
         entity.addAnimation("idle", new Animation<>(0.15f, hero.getIdleRegion()));
         entity.addAnimation("run", new Animation<>(0.1f / (float) Math.sqrt(speed), hero.getRunRegion()));
         entity.setAnimation("idle");
@@ -261,5 +270,77 @@ public class Player {
 
     public void die() {
 
+    }
+
+    public void setEntity(AnimatedEntity entity) {
+        this.entity = entity;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setCurrentLevelMinXp(int currentLevelMinXp) {
+        this.currentLevelMinXp = currentLevelMinXp;
+    }
+
+    public void setCollision(Collision collision) {
+        this.collision = collision;
+    }
+
+    public void setInvincibilityRangeTime(float invincibilityRangeTime) {
+        this.invincibilityRangeTime = invincibilityRangeTime;
+    }
+
+    public void setInvincibilityStartTime(float invincibilityStartTime) {
+        this.invincibilityStartTime = invincibilityStartTime;
+    }
+
+    public void setInvincible(boolean invincible) {
+        isInvincible = invincible;
+    }
+
+    public void setLastBlinkDiff(float lastBlinkDiff) {
+        this.lastBlinkDiff = lastBlinkDiff;
+    }
+
+    public void setBlinkFrequency(float blinkFrequency) {
+        this.blinkFrequency = blinkFrequency;
+    }
+
+    public void setKnockbackVector(Vector2 knockbackVector) {
+        this.knockbackVector = knockbackVector;
+    }
+
+    public void setKnockBackDamping(float knockBackDamping) {
+        this.knockBackDamping = knockBackDamping;
+    }
+
+    public float getInvincibilityRangeTime() {
+        return invincibilityRangeTime;
+    }
+
+    public float getInvincibilityStartTime() {
+        return invincibilityStartTime;
+    }
+
+    public float getLastBlinkDiff() {
+        return lastBlinkDiff;
+    }
+
+    public float getBlinkFrequency() {
+        return blinkFrequency;
+    }
+
+    public Vector2 getKnockbackVector() {
+        return knockbackVector;
+    }
+
+    public float getKnockBackDamping() {
+        return knockBackDamping;
     }
 }

@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -109,7 +110,9 @@ public enum EnemyType {
     private float collisionHeight;
 
     private Map<String, ArrayList<String>> texturePaths;
+    @JsonIgnore
     private Map<String, Array<Texture>> textures;
+    @JsonIgnore
     private Map<String, Array<TextureRegion>> textureRegions;
 
     EnemyType(float hp,

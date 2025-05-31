@@ -9,7 +9,7 @@
       "answer" : "April"
     },
     "settingData" : {
-      "musicVolume" : 0.36,
+      "musicVolume" : 0.23,
       "musicEnabled" : true,
       "playingMusicPath" : "musics/pre_game/Murder_berserk.mp3",
       "sfxVolume" : 0.5,
@@ -25,9 +25,9 @@
         "47" : 47
       }
     },
-    "score" : 0,
-    "kills" : 0,
-    "liveTime" : 3653,
+    "score" : 253563,
+    "kills" : 873,
+    "liveTime" : 4521,
     "avatarPath" : "avatars/berserk.jpg",
     "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
     "avatarTexture" : {
@@ -36,8 +36,6 @@
       "magFilter" : "Nearest",
       "width" : 256,
       "height" : 196,
-      "depth" : 0,
-      "managed" : true,
       "textureData" : {
         "width" : 256,
         "height" : 196,
@@ -49,10 +47,12 @@
         "managed" : true,
         "prepared" : false
       },
-      "uwrap" : "ClampToEdge",
-      "vwrap" : "ClampToEdge",
+      "managed" : true,
+      "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 4
+      "textureObjectHandle" : 176,
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge"
     }
   }, {
     "id" : 2,
@@ -91,8 +91,6 @@
       "magFilter" : "Nearest",
       "width" : 725,
       "height" : 784,
-      "depth" : 0,
-      "managed" : true,
       "textureData" : {
         "width" : 725,
         "height" : 784,
@@ -104,10 +102,12 @@
         "managed" : true,
         "prepared" : false
       },
-      "uwrap" : "ClampToEdge",
-      "vwrap" : "ClampToEdge",
+      "managed" : true,
+      "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 5
+      "textureObjectHandle" : 177,
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge"
     }
   }, {
     "id" : 3,
@@ -146,8 +146,6 @@
       "magFilter" : "Nearest",
       "width" : 543,
       "height" : 734,
-      "depth" : 0,
-      "managed" : true,
       "textureData" : {
         "width" : 543,
         "height" : 734,
@@ -159,10 +157,12 @@
         "managed" : true,
         "prepared" : false
       },
-      "uwrap" : "ClampToEdge",
-      "vwrap" : "ClampToEdge",
+      "managed" : true,
+      "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 6
+      "textureObjectHandle" : 178,
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge"
     }
   }, {
     "id" : 4,
@@ -201,8 +201,6 @@
       "magFilter" : "Nearest",
       "width" : 543,
       "height" : 734,
-      "depth" : 0,
-      "managed" : true,
       "textureData" : {
         "width" : 543,
         "height" : 734,
@@ -214,10 +212,12 @@
         "managed" : true,
         "prepared" : false
       },
-      "uwrap" : "ClampToEdge",
-      "vwrap" : "ClampToEdge",
+      "managed" : true,
+      "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 7
+      "textureObjectHandle" : 179,
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge"
     }
   } ],
   "currentUser" : {
@@ -230,7 +230,7 @@
       "answer" : "April"
     },
     "settingData" : {
-      "musicVolume" : 0.36,
+      "musicVolume" : 0.23,
       "musicEnabled" : true,
       "playingMusicPath" : "musics/pre_game/Murder_berserk.mp3",
       "sfxVolume" : 0.5,
@@ -246,9 +246,9 @@
         "47" : 47
       }
     },
-    "score" : 0,
-    "kills" : 0,
-    "liveTime" : 3653,
+    "score" : 253563,
+    "kills" : 873,
+    "liveTime" : 4521,
     "avatarPath" : "avatars/berserk.jpg",
     "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
     "avatarTexture" : {
@@ -257,8 +257,6 @@
       "magFilter" : "Nearest",
       "width" : 256,
       "height" : 196,
-      "depth" : 0,
-      "managed" : true,
       "textureData" : {
         "width" : 256,
         "height" : 196,
@@ -270,10 +268,12 @@
         "managed" : true,
         "prepared" : false
       },
-      "uwrap" : "ClampToEdge",
-      "vwrap" : "ClampToEdge",
+      "managed" : true,
+      "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 8
+      "textureObjectHandle" : 180,
+      "uwrap" : "ClampToEdge",
+      "vwrap" : "ClampToEdge"
     }
   },
   "stayLoggedIn" : true

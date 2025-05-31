@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,12 +60,16 @@ public enum GunType {
     private float shootingDelay;
     private float knockBackForce;
 
-    private final ArrayList<String> stillPath;
+    private ArrayList<String> stillPath;
+    @JsonIgnore
     private ArrayList<Texture> stillTexture = null;
+    @JsonIgnore
     private Array<TextureRegion> stillRegion = null;
 
-    private final ArrayList<String> reloadPath;
+    private ArrayList<String> reloadPath;
+    @JsonIgnore
     private ArrayList<Texture> reloadTexture = null;
+    @JsonIgnore
     private Array<TextureRegion> reloadRegion = null;
 
     private String description;

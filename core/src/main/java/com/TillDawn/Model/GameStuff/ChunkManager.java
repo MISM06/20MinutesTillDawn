@@ -1,18 +1,48 @@
 package com.TillDawn.Model.GameStuff;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class ChunkManager {
+    @JsonIgnore
     public static final int viewRadius = 3;
 
+    @JsonIgnore
     private HashMap<Coordinate, Chunk> chunks = new HashMap<>();
+    @JsonIgnore
     private HashMap<Coordinate, Chunk> cachedChunks = new HashMap<>();
 
+    private int nothing = 2;
+
+    public int getNothing() {
+        return nothing;
+    }
+
+    public void setNothing(int nothing) {
+        this.nothing = nothing;
+    }
+
     public ChunkManager() {
+    }
+
+    public HashMap<Coordinate, Chunk> getChunks() {
+        return chunks;
+    }
+
+    public HashMap<Coordinate, Chunk> getCachedChunks() {
+        return cachedChunks;
+    }
+
+    public void setChunks(HashMap<Coordinate, Chunk> chunks) {
+        this.chunks = chunks;
+    }
+
+    public void setCachedChunks(HashMap<Coordinate, Chunk> cachedChunks) {
+        this.cachedChunks = cachedChunks;
     }
 
     public void update(float playerX, float playerY) {

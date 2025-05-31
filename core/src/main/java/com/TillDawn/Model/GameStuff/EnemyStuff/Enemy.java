@@ -9,16 +9,18 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Enemy {
+    @JsonIgnore
     private AnimatedEntity entity;
+    private Collision collision;
     private EnemyType type;
     private float hp;
     private int damage;
     private boolean isShooter;
     private BulletType bulletType;
     private float shootingDelay;
-    private Collision collision;
     private float centerX;
     private float centerY;
     private float speed;
@@ -40,6 +42,11 @@ public class Enemy {
         bulletType = type.getBulletType();
         shootingDelay = type.getShootingDelay();
         speed = type.getSpeed();
+        entity = new AnimatedEntity(centerX - type.getWidth() / 2, centerY - type.getHeight() / 2, type.getWidth(), type.getHeight());
+        collision = new Collision(centerX, centerY, type.getCollisionWidth(), type.getCollisionHeight());
+    }
+
+    public void prePareEntity() {
         entity = new AnimatedEntity(centerX - type.getWidth() / 2, centerY - type.getHeight() / 2, type.getWidth(), type.getHeight());
         collision = new Collision(centerX, centerY, type.getCollisionWidth(), type.getCollisionHeight());
     }
@@ -151,15 +158,23 @@ public class Enemy {
     }
 
     public void setCenterX(float centerX) {
-        entity.move(centerX - this.centerX, 0);
-        collision.move(centerX - this.centerX, 0);
+        float old = this.centerX;
         this.centerX = centerX;
+        if (entity == null) prePareEntity();
+        else {
+            entity.move(centerX - old, 0);
+            collision.move(centerX - old, 0);
+        }
     }
 
     public void setCenterY(float centerY) {
-        entity.move(0, centerY - this.centerY);
-        collision.move(0, centerY - this.centerY);
+        float old = this.centerY;
         this.centerY = centerY;
+        if (entity == null) prePareEntity();
+        else {
+            entity.move(0, centerY - old);
+            collision.move(0, centerY - old);
+        }
     }
 
     public void move(float dx, float dy) {

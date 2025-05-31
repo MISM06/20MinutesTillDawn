@@ -8,9 +8,11 @@ import com.TillDawn.Model.GameAssetManager;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Gun {
     private GunType type;
+    @JsonIgnore
     private AnimatedEntity entity;
     private float damage;
     private float projectile;
@@ -28,13 +30,17 @@ public class Gun {
     private float radius = 1f;
     private float angleDeg;
 
-    public Gun(GunType type) {
-        this.type = type;
+    public void prePareEntity() {
         entity = new AnimatedEntity(0, 0, type.getWidth(), type.getHeight());
         entity.addAnimation("still", new Animation<>(0.1f, type.getStillRegion()));
         entity.addAnimation("reload", new Animation<>(0.1f, type.getReloadRegion()));
         entity.setAnimation("still");
         entity.getSprite().setOriginCenter();
+    }
+
+    public Gun(GunType type) {
+        this.type = type;
+        prePareEntity();
         damage = type.getDamage();
         projectile = type.getProjectile();
         reloadTime = type.getTimeReload();
@@ -219,5 +225,49 @@ public class Gun {
     }
     public float getSpreedDeg() {
         return spreedDeg;
+    }
+
+    public void setType(GunType type) {
+        this.type = type;
+    }
+
+    public void setEntity(AnimatedEntity entity) {
+        this.entity = entity;
+    }
+
+    public void setAmmo(float ammo) {
+        this.ammo = ammo;
+    }
+
+    public void setBulletType(BulletType bulletType) {
+        this.bulletType = bulletType;
+    }
+
+    public void setShootingDelay(float shootingDelay) {
+        this.shootingDelay = shootingDelay;
+    }
+
+    public void setLastShotDiff(float lastShotDiff) {
+        this.lastShotDiff = lastShotDiff;
+    }
+
+    public void setAngleDeg(float angleDeg) {
+        this.angleDeg = angleDeg;
+    }
+
+    public BulletType getBulletType() {
+        return bulletType;
+    }
+
+    public float getShootingDelay() {
+        return shootingDelay;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public float getAngleDeg() {
+        return angleDeg;
     }
 }

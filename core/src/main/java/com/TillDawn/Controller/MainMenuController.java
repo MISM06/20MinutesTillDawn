@@ -45,11 +45,14 @@ public class MainMenuController {
             view.dispose();
             App.getInstance().appService().closeApp();
         }
-        if (view.getContinueGameButton().isChecked()) {
-            if (SaveLoadService.loadGame()) {
+
+    }
+    public void loadGame() {
+        if (SaveLoadService.loadGame()) {
+
                 view.dispose();
-                TillDawn.getTillDawn().setScreen(Game.getInstance().getGameView());
-            }
+                TillDawn.getTillDawn().setScreen(Screens.GameView.getScreen());
         }
+//        System.out.println(SaveLoadService.loadGame());
     }
 }

@@ -48,16 +48,20 @@ public class PreGameMenuController {
 //        AudioManager.stopMusic();
         switch (view.getGameDurationSelector().getSelected()) {
             case "10 minutes":
-                game.setTimeDuration(10);
+                game.setTimeDuration(10 * 60);
+                game.setTimeLeft(10 * 60);
                 break;
             case "5 minutes":
-                game.setTimeDuration(5);
+                game.setTimeDuration(5 * 60);
+                game.setTimeLeft(5 * 60);
                 break;
             case "2 minutes":
-                game.setTimeDuration(2);
+                game.setTimeDuration(2 * 60);
+                game.setTimeLeft(2 * 60);
                 break;
             default:
-                game.setTimeDuration(20);
+                game.setTimeDuration(20 * 60);
+                game.setTimeLeft(20 * 60);
         }
         view.dispose();
         TillDawn.getTillDawn().setScreen(Screens.GameView.getScreen());

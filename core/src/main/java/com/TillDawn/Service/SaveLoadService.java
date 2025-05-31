@@ -1,8 +1,15 @@
 package com.TillDawn.Service;
 
 import com.TillDawn.Model.App;
+import com.TillDawn.Model.Enums.Screens;
+import com.TillDawn.Model.GameStuff.AbilityManager;
+import com.TillDawn.Model.GameStuff.BulletManager;
+import com.TillDawn.Model.GameStuff.ChunkManager;
+import com.TillDawn.Model.GameStuff.EnemyStuff.Enemy;
+import com.TillDawn.Model.GameStuff.EnemyStuff.EnemyManager;
 import com.TillDawn.Model.GameStuff.Game;
 import com.TillDawn.Model.User;
+import com.TillDawn.TillDawn;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,21 +36,40 @@ public class SaveLoadService {
             Game loaded = mapper.readValue(gameFile, Game.class);
             int id = loaded.getPlayer().getUserId();
             if (id != App.getInstance().getCurrentUser().getId()) return false;
+            Game.getInstance().setSeed(loaded.getSeed());
             Game.getInstance().setPlayer(loaded.getPlayer());
             Game.getInstance().getPlayer().setUser(App.getInstance().appService().getUserById(id));
-            Game.getInstance().setChunkManager(loaded.getChunkManager());
+//            Game.getInstance().getPlayer().prePareEntity();
+            Game.getInstance().getPlayer().getGun().prePareEntity();
+
+//
             Game.getInstance().setTimeLeft(loaded.getTimeLeft());
             Game.getInstance().setTimeDuration(loaded.getTimeDuration());
-            Game.getInstance().setGameViewController(loaded.getGameViewController());
-            Game.getInstance().setGameView(loaded.getGameView());
 
-            Game.getInstance().getGameView().setController(Game.getInstance().getGameViewController());
-            Game.getInstance().getGameViewController().setView(Game.getInstance().getGameView());
 
-            Game.getInstance().setBulletManager(loaded.getBulletManager());
+//            Game.getInstance().setChunkManager(loaded.getChunkManager());
+            Game.getInstance().setChunkManager(new ChunkManager());
+//            Game.getInstance().setBulletManager(loaded.getBulletManager());
             Game.getInstance().setEnemyManager(loaded.getEnemyManager());
+            for (Enemy enemy : Game.getInstance().getEnemyManager().getNormalEnemy()) {
+                if (enemy.getEntity() == null) enemy.prePareEntity();
+                switch (enemy.getType()) {
+                    case Tentacle:
+                        enemy.setTentacle();
+                        break;
+                    case EyeBat:
+                        enemy.setEyeBat();
+                        break;
+                }
+            }
             Game.getInstance().setAbilityManager(loaded.getAbilityManager());
+
+            Game.getInstance().setBulletManager(new BulletManager());
+//            Game.getInstance().setEnemyManager(new EnemyManager());
+//            Game.getInstance().setAbilityManager(new AbilityManager());
+
             System.out.println("Game loaded from " + gameFile.getAbsolutePath());
+//            Game.getInstance().getGameViewController().setView(Game.getInstance().getGameView());
             return true;
         } catch (IOException e) {
             e.printStackTrace();

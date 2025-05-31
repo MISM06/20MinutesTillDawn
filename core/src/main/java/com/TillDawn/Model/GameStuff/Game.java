@@ -3,6 +3,7 @@ package com.TillDawn.Model.GameStuff;
 import com.TillDawn.Controller.GameViewController;
 import com.TillDawn.Model.GameStuff.EnemyStuff.EnemyManager;
 import com.TillDawn.View.GameView;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Random;
 
@@ -33,12 +34,16 @@ public class Game {
     }
 
     private Player player;
+
     private ChunkManager chunkManager;
     private float timeDuration;
     private float timeLeft;
+    @JsonIgnore
     private GameViewController gameViewController;
+    @JsonIgnore
     private GameView gameView;
 
+    @JsonIgnore
     private BulletManager bulletManager;
     private EnemyManager enemyManager;
     private AbilityManager abilityManager;
@@ -71,8 +76,7 @@ public class Game {
     }
 
     public void setTimeDuration(float timeDurationMinute) {
-        this.timeDuration = timeDurationMinute * 60f;
-        setTimeLeft(timeDuration);
+        this.timeDuration = timeDurationMinute;
     }
     public void setTimeLeft(float timeLeft) {
         this.timeLeft = timeLeft;

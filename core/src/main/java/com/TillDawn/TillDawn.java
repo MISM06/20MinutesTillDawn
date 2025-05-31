@@ -1,5 +1,6 @@
 package com.TillDawn;
 
+import com.TillDawn.Controller.ProfileMenuController;
 import com.TillDawn.Model.Enums.Assets.Tiles;
 import com.TillDawn.Model.Enums.GunType;
 import com.TillDawn.Model.Enums.Hero;
@@ -22,6 +23,8 @@ import java.util.Arrays;
 public class TillDawn extends com.badlogic.gdx.Game {
     private static TillDawn tillDawn;
     private static SpriteBatch batch;
+
+    public static ProfileMenuController unrealController;
 
 //    private DragAndDropHandler dragAndDropHandler;
 

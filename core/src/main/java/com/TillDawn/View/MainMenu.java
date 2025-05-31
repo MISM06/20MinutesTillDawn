@@ -10,8 +10,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -103,6 +105,11 @@ public class MainMenu implements Screen {
         continueGameButton.getLabel().setFontScale(0.6f);
         continueGameButton.pack();
         buttonsTable.add(continueGameButton).padTop(10).center();
+        continueGameButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y) {
+                controller.loadGame();
+            }
+        });
 
         profileButton.getLabel().setFontScale(0.6f);
         profileButton.pack();

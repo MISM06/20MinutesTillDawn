@@ -1,17 +1,42 @@
 package com.TillDawn.Model.GameStuff;
 
 import com.TillDawn.Model.Enums.AbilityTypes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AbilityManager {
+    @JsonIgnore
     private ArrayList<AbilityTypes> temporaries = new ArrayList<>();
+    @JsonIgnore
     private ArrayList<Float> timeAdded = new ArrayList<>();
     private boolean[] hasSeen = new boolean[AbilityTypes.values().length];
 
     public AbilityManager() {
         Arrays.fill(hasSeen, false);
+        temporaries = new ArrayList<>();
+        timeAdded = new ArrayList<>();
+    }
+
+    public ArrayList<AbilityTypes> getTemporaries() {
+        return temporaries;
+    }
+
+    public ArrayList<Float> getTimeAdded() {
+        return timeAdded;
+    }
+
+    public void setTemporaries(ArrayList<AbilityTypes> temporaries) {
+        this.temporaries = temporaries;
+    }
+
+    public void setTimeAdded(ArrayList<Float> timeAdded) {
+        this.timeAdded = timeAdded;
+    }
+
+    public void setHasSeen(boolean[] hasSeen) {
+        this.hasSeen = hasSeen;
     }
 
     public void add(AbilityTypes ability) {

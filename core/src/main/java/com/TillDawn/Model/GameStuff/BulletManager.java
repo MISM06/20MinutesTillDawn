@@ -3,14 +3,20 @@ package com.TillDawn.Model.GameStuff;
 import com.TillDawn.Model.GameAssetManager;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 
 public class BulletManager {
+    @JsonIgnore
     private ArrayList<Bullet> bullets = new ArrayList<>();
+    @JsonIgnore
     private ArrayList<Bullet> enemyBullets = new ArrayList<>();
 
+
     public BulletManager() {
+        bullets = new ArrayList<>();
+        enemyBullets = new ArrayList<>();
     }
     public void addBullet(Bullet bullet) {
         bullets.add(bullet);
@@ -67,5 +73,21 @@ public class BulletManager {
     }
     public void removeEnemyBullet(Bullet bullet) {
         enemyBullets.remove(bullet);
+    }
+
+    public ArrayList<Bullet> getBullets() {
+        return bullets;
+    }
+
+    public ArrayList<Bullet> getEnemyBullets() {
+        return enemyBullets;
+    }
+
+    public void setBullets(ArrayList<Bullet> bullets) {
+        this.bullets = bullets;
+    }
+
+    public void setEnemyBullets(ArrayList<Bullet> enemyBullets) {
+        this.enemyBullets = enemyBullets;
     }
 }

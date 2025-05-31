@@ -5,14 +5,25 @@ import com.TillDawn.Model.Enums.Screens;
 import com.TillDawn.Model.App;
 import com.TillDawn.Model.Result;
 import com.TillDawn.TillDawn;
+import com.TillDawn.View.GameView;
 import com.TillDawn.View.ProfileMenu;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Texture;
 
 public class ProfileMenuController {
     ProfileMenu view;
 
     public void setView(ProfileMenu view) {
+        TillDawn.unrealController = this;
         this.view = view;
     }
+
+    public void onFileDropped(FileHandle fileHandle) {
+        if (fileHandle != null && fileHandle.exists()) {
+            App.getInstance().getCurrentUser().setOutsideAvatarPath(fileHandle.path());
+        }
+    }
+
 
     public void handle() {
 

@@ -1,193 +1,323 @@
 {
-  "seed" : 1615896642,
+  "seed" : 1102294607,
   "player" : {
     "userId" : 1,
-    "entity" : {
-      "sprite" : {
-        "texture" : {
-          "glTarget" : 3553,
-          "minFilter" : "Nearest",
-          "magFilter" : "Nearest",
-          "width" : 16,
-          "height" : 27,
-          "managed" : true,
-          "depth" : 0,
-          "textureData" : {
-            "width" : 16,
-            "height" : 27,
-            "format" : "RGBA8888",
-            "fileHandle" : {
-              "directory" : false
-            },
-            "type" : "Pixmap",
-            "managed" : true,
-            "prepared" : false
-          },
-          "uwrap" : "ClampToEdge",
-          "vwrap" : "ClampToEdge",
-          "anisotropicFilter" : 1.0,
-          "textureObjectHandle" : 10
-        },
-        "u" : 0.0,
-        "v" : 0.0,
-        "u2" : 1.0,
-        "v2" : 1.0,
-        "regionWidth" : 16,
-        "regionHeight" : 27,
-        "vertices" : [ 0.0, 0.0, -1.7014117E38, 0.0, 1.0, 0.0, 1.64, -1.7014117E38, 0.0, 0.0, 1.0, 1.64, -1.7014117E38, 1.0, 0.0, 1.0, 0.0, -1.7014117E38, 1.0, 1.0 ],
-        "color" : {
-          "r" : 1.0,
-          "g" : 1.0,
-          "b" : 1.0,
-          "a" : 1.0
-        },
-        "packedColor" : -1.7014117E38,
-        "x" : 0.0,
-        "y" : 0.0,
-        "width" : 1.0,
-        "height" : 1.64,
-        "originX" : 0.0,
-        "originY" : 0.0,
-        "rotation" : 0.0,
-        "scaleX" : 1.0,
-        "scaleY" : 1.0,
-        "boundingRectangle" : {
-          "x" : 0.0,
-          "y" : 0.0,
-          "width" : 1.0,
-          "height" : 1.64,
-          "aspectRatio" : 0.6097561
-        },
-        "flipX" : false,
-        "flipY" : false,
-        "regionY" : 0,
-        "regionX" : 0
-      },
-      "animations" : {
-        "size" : 2,
-        "empty" : false
-      },
-      "currentAnimation" : "idle",
-      "time" : 1.6240038,
-      "rightFaceWay" : true,
-      "upFaceWay" : true,
-      "collision" : null,
-      "width" : 1.0,
-      "height" : 1.64,
-      "x" : 0.0,
-      "y" : 0.0,
-      "animationFinished" : true
+    "collision" : {
+      "width" : 0.7,
+      "height" : 1.148,
+      "centerX" : -7.121858,
+      "centerY" : 5.3517814,
+      "startX" : -7.471858,
+      "startY" : 4.777782,
+      "endX" : -6.771858,
+      "endY" : 5.9257817
     },
-    "x" : 0.0,
-    "y" : 0.0,
-    "hp" : 4,
+    "x" : -7.621858,
+    "y" : 4.5708294,
+    "hp" : 3,
     "maxHp" : 4,
     "speed" : 2.828427,
     "hero" : "Shana",
     "gun" : {
       "type" : "Revolver",
-      "entity" : {
-        "sprite" : {
-          "texture" : {
-            "glTarget" : 3553,
-            "minFilter" : "Nearest",
-            "magFilter" : "Nearest",
-            "width" : 16,
-            "height" : 16,
-            "managed" : true,
-            "depth" : 0,
-            "textureData" : {
-              "width" : 16,
-              "height" : 16,
-              "format" : "RGBA8888",
-              "fileHandle" : {
-                "directory" : false
-              },
-              "type" : "Pixmap",
-              "managed" : true,
-              "prepared" : false
-            },
-            "uwrap" : "ClampToEdge",
-            "vwrap" : "ClampToEdge",
-            "anisotropicFilter" : 1.0,
-            "textureObjectHandle" : 56
-          },
-          "u" : 0.0,
-          "v" : 1.0,
-          "u2" : 1.0,
-          "v2" : 0.0,
-          "regionWidth" : 16,
-          "regionHeight" : 16,
-          "vertices" : [ 0.08824992, 1.1670761, -1.7014117E38, 0.0, 0.0, 0.558801, 0.28470343, -1.7014117E38, 0.0, 1.0, -0.32357168, -0.18584764, -1.7014117E38, 1.0, 1.0, -0.79412276, 0.69652504, -1.7014117E38, 1.0, 0.0 ],
-          "color" : {
-            "r" : 1.0,
-            "g" : 1.0,
-            "b" : 1.0,
-            "a" : 1.0
-          },
-          "packedColor" : -1.7014117E38,
-          "x" : -0.6176609,
-          "y" : -0.009385765,
-          "width" : 1.0,
-          "height" : 1.0,
-          "originX" : 0.5,
-          "originY" : 0.5,
-          "rotation" : -151.96184,
-          "scaleX" : 1.0,
-          "scaleY" : 1.0,
-          "boundingRectangle" : {
-            "x" : -0.79412276,
-            "y" : -0.18584764,
-            "width" : 1.3529238,
-            "height" : 1.3529238,
-            "aspectRatio" : 1.0
-          },
-          "flipX" : false,
-          "flipY" : true,
-          "regionY" : 16,
-          "regionX" : 0
-        },
-        "animations" : {
-          "size" : 2,
-          "empty" : false
-        },
-        "currentAnimation" : "still",
-        "time" : 1.6240038,
-        "rightFaceWay" : true,
-        "upFaceWay" : false,
-        "collision" : null,
-        "width" : 1.0,
-        "height" : 1.0,
-        "x" : -0.6176609,
-        "y" : -0.009385765,
-        "animationFinished" : true
-      },
       "damage" : 20.0,
       "projectile" : 1.0,
       "reloadTime" : 1.0,
       "maxAmmo" : 6.0,
-      "ammo" : 6.0,
+      "ammo" : 2.0,
       "spreedDeg" : 0.0,
-      "lastShotDiff" : 1.6240038,
+      "bulletType" : "normal",
+      "shootingDelay" : 0.4,
+      "lastShotDiff" : 2.9423375,
       "inShooting" : false,
       "autoReload" : true,
-      "autoAim" : false
+      "autoAim" : false,
+      "radius" : 0.7,
+      "angleDeg" : -24.483225
     },
     "xp" : 0,
     "level" : 1,
     "currentLevelMinXp" : 0,
-    "collision" : {
-      "width" : 0.7,
-      "height" : 1.148,
-      "centerX" : 0.5,
-      "centerY" : 0.7809524,
-      "startX" : 0.15,
-      "startY" : 0.2069524,
-      "endX" : 0.85,
-      "endY" : 1.3549523
-    },
     "killCount" : 0,
     "autoAim" : false,
-    "invincible" : true
+    "invincibilityRangeTime" : 2.0,
+    "invincibilityStartTime" : 22.48462,
+    "lastBlinkDiff" : 0.0748978,
+    "blinkFrequency" : 0.3,
+    "knockbackVector" : {
+      "x" : -7.572941E-11,
+      "y" : -1.1159212E-11,
+      "zero" : false,
+      "unit" : false
+    },
+    "knockBackDamping" : 3.0,
+    "invincible" : false
   },
-  "chunkManager"
+  "chunkManager" : {
+    "nothing" : 2
+  },
+  "timeDuration" : 1200.0,
+  "timeLeft" : 1170.0402,
+  "enemyManager" : {
+    "normalEnemy" : [ {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -3.4030693,
+        "centerY" : 2.79711,
+        "startX" : -3.6530693,
+        "startY" : 2.3471105,
+        "endX" : -3.153069,
+        "endY" : 3.2471097
+      },
+      "type" : "Tentacle",
+      "hp" : 5.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -3.4030693,
+      "centerY" : 2.79711,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 2.3720865E-14,
+        "y" : -8.854094E-14,
+        "zero" : false,
+        "unit" : false
+      },
+      "knockBackDamping" : 3.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -4.5665445,
+        "centerY" : 3.8066077,
+        "startX" : -4.816545,
+        "startY" : 3.356608,
+        "endX" : -4.3165445,
+        "endY" : 4.256608
+      },
+      "type" : "Tentacle",
+      "hp" : 5.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -4.5665445,
+      "centerY" : 3.8066077,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : -1.9608605E-16,
+        "y" : -2.6899771E-17,
+        "zero" : false,
+        "unit" : false
+      },
+      "knockBackDamping" : 3.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : 0.6555025,
+        "centerY" : 2.3685486,
+        "startX" : 0.4055025,
+        "startY" : 1.9185488,
+        "endX" : 0.9055028,
+        "endY" : 2.8185496
+      },
+      "type" : "Tentacle",
+      "hp" : 5.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : 0.6555025,
+      "centerY" : 2.3685486,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 2.5934525E-4,
+        "y" : -1.5690482E-4,
+        "zero" : false,
+        "unit" : false
+      },
+      "knockBackDamping" : 3.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -5.1882834,
+        "centerY" : 1.6522385,
+        "startX" : -5.4382825,
+        "startY" : 1.2022388,
+        "endX" : -4.9382834,
+        "endY" : 2.1022382
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -5.1882834,
+      "centerY" : 1.6522385,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -6.7103634,
+        "centerY" : 3.366921,
+        "startX" : -6.960363,
+        "startY" : 2.916921,
+        "endX" : -6.4603634,
+        "endY" : 3.8169205
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -6.7103634,
+      "centerY" : 3.366921,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -3.2568986,
+        "centerY" : 8.012375,
+        "startX" : -3.5068986,
+        "startY" : 7.562374,
+        "endX" : -3.0068986,
+        "endY" : 8.462377
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -3.2568986,
+      "centerY" : 8.012375,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : 1.2065827,
+        "centerY" : -10.525065,
+        "startX" : 0.95658267,
+        "startY" : -10.975065,
+        "endX" : 1.456582,
+        "endY" : -10.075065
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : 1.2065827,
+      "centerY" : -10.525065,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -17.09089,
+        "centerY" : 0.4151237,
+        "startX" : -17.34089,
+        "startY" : -0.03487611,
+        "endX" : -16.84089,
+        "endY" : 0.8651236
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -17.09089,
+      "centerY" : 0.4151237,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    }, {
+      "collision" : {
+        "width" : 0.5,
+        "height" : 0.9,
+        "centerX" : -18.208405,
+        "centerY" : 11.509421,
+        "startX" : -18.458405,
+        "startY" : 11.059422,
+        "endX" : -17.958405,
+        "endY" : 11.959421
+      },
+      "type" : "Tentacle",
+      "hp" : 25.0,
+      "damage" : 1,
+      "bulletType" : null,
+      "shootingDelay" : 0.0,
+      "centerX" : -18.208405,
+      "centerY" : 11.509421,
+      "speed" : 1.0,
+      "lastShotDiff" : 0.0,
+      "knockbackVector" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "zero" : true,
+        "unit" : false
+      },
+      "knockBackDamping" : 10.0,
+      "shooter" : false
+    } ],
+    "tentacleLastSpawn" : 2.6396446,
+    "eyeBatLastSpawn" : 29.960157,
+    "shubNiggurathSpawnedTillNow" : false
+  },
+  "abilityManager" : {
+    "hasSeen" : [ false, false, false, false, false ]
+  },
+  "timePassed" : 29.959839
+}
