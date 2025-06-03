@@ -5,8 +5,10 @@ import com.TillDawn.Model.Enums.Screens;
 import com.TillDawn.Model.GameStuff.AbilityManager;
 import com.TillDawn.Model.GameStuff.BulletManager;
 import com.TillDawn.Model.GameStuff.ChunkManager;
+import com.TillDawn.Model.GameStuff.EnemyStuff.Boss;
 import com.TillDawn.Model.GameStuff.EnemyStuff.Enemy;
 import com.TillDawn.Model.GameStuff.EnemyStuff.EnemyManager;
+import com.TillDawn.Model.GameStuff.EnemyStuff.ShubNiggurath;
 import com.TillDawn.Model.GameStuff.Game;
 import com.TillDawn.Model.User;
 import com.TillDawn.TillDawn;
@@ -60,6 +62,13 @@ public class SaveLoadService {
                     case EyeBat:
                         enemy.setEyeBat();
                         break;
+                }
+            }
+            for (Boss boss : Game.getInstance().getEnemyManager().getBosses()) {
+                if (boss.getEntity() == null) boss.prePareEntity();
+                switch (boss.getType()) {
+                    case ShubNiggurath:
+                        ((ShubNiggurath) boss).loadBoss();
                 }
             }
             Game.getInstance().setAbilityManager(loaded.getAbilityManager());

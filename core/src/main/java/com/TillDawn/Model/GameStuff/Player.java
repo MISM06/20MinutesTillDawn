@@ -15,13 +15,13 @@ public class Player {
 
     @JsonIgnore
     private AnimatedEntity entity;
-    private Collision collision;
     private float x;
     private float y;
+    private Collision collision;
+    private Hero hero;
     private int hp;
     private int maxHp;
     private float speed;
-    private Hero hero;
     private Gun gun;
     private int xp;
     private int level;
@@ -55,13 +55,13 @@ public class Player {
 
     public void setX(float x) {
         if (entity != null) entity.getSprite().translateX(x - this.x);
-        collision.move(x - this.x, 0);
+        if (collision != null) collision.move(x - this.x, 0);
         this.x = x;
     }
 
     public void setY(float y) {
         if (entity != null) entity.getSprite().translateY(y - this.y);
-        collision.move(0, y - this.y);
+        if (collision != null) collision.move(0, y - this.y);
         this.y = y;
     }
 
@@ -81,18 +81,21 @@ public class Player {
         entity.setSize(hero.getWidth(), hero.getHeight());
     }
 
-    public void setHero(Hero hero) {
+    public void setHeroType(Hero hero) {
         this.hero = hero;
         hp = hero.getHp();
         maxHp = hp;
         speed = (float) Math.sqrt(hero.getSpeed() * Math.sqrt(hero.getSpeed()));
-        if (entity == null) prePareEntity();
         entity.addAnimation("idle", new Animation<>(0.15f, hero.getIdleRegion()));
         entity.addAnimation("run", new Animation<>(0.1f / (float) Math.sqrt(speed), hero.getRunRegion()));
         entity.setAnimation("idle");
         entity.setSize(hero.getWidth(), hero.getHeight());
         collision = new Collision(x + entity.getWidth() / 2, y + entity.getHeight() / 2.1f,
             entity.getWidth() * 0.7f, entity.getHeight() * 0.7f);
+    }
+    public void setHero(Hero hero) {
+        this.hero = hero;
+        if (entity == null) prePareEntity();
     }
 
     public Hero getHero() {
@@ -343,4 +346,6 @@ public class Player {
     public float getKnockBackDamping() {
         return knockBackDamping;
     }
+
+
 }

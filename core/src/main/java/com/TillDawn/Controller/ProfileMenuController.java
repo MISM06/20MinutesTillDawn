@@ -20,7 +20,9 @@ public class ProfileMenuController {
 
     public void onFileDropped(FileHandle fileHandle) {
         if (fileHandle != null && fileHandle.exists()) {
-            App.getInstance().getCurrentUser().setOutsideAvatarPath(fileHandle.path());
+            if (App.getInstance().getCurrentMenu().equals(Screens.ProfileMenu)) {
+                App.getInstance().getCurrentUser().setOutsideAvatarPath(fileHandle.path());
+            }
         }
     }
 

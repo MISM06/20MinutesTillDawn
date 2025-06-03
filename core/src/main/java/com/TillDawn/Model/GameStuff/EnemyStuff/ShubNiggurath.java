@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,9 @@ public class ShubNiggurath extends Boss{
     private int borderTileNumberInOneBlock;
     private float borderTileWidthH;
     private float borderTileHeightH;
+    @JsonIgnore
     private ArrayList<AnimatedEntity> borderHs = new ArrayList<>();
+    @JsonIgnore
     private ArrayList<AnimatedEntity> borderVs = new ArrayList<>();
 
     private float lastBorderSmallingDiff;
@@ -62,8 +65,19 @@ public class ShubNiggurath extends Boss{
         inCharge = false;
         inAttack = false;
         inRun = false;
+        prepareAnimation();
+        lastBorderSmallingDiff = 0f;
+        makeBorder();
+        run();
+    }
+
+    public void loadBoss() {
+        prepareAnimation();
+        assembleBorder();
+    }
 
 
+    public void prepareAnimation() {
         getEntity().addAnimation("run",
             new Animation<>(0.2f,getType().getTextureRegions("run")));
         getEntity().addAnimation("still",
@@ -74,16 +88,15 @@ public class ShubNiggurath extends Boss{
         getEntity().addAnimation("dash",
             new Animation<>(dashDuration / getType().getTextureRegions("dash").size,
                 getType().getTextureRegions("dash")));
-
-        lastBorderSmallingDiff = 0f;
-        makeBorder();
-        run();
     }
 
 
     @Override
     public void update(float delta) {
 
+        if (inAttack) getEntity().setAnimation("dash");
+        if (inRun) getEntity().setAnimation("run");
+        if (inCharge) getEntity().setAnimation("charge");
         lastAttackDiff += delta;
         lastBorderSmallingDiff += delta;
         float playerCenterX = Game.getInstance().getPlayer().getCollision().getCenterX();
@@ -209,17 +222,6 @@ public class ShubNiggurath extends Boss{
         borderCenterX = Game.getInstance().getPlayer().getCollision().getCenterX();
         borderCenterY = Game.getInstance().getPlayer().getCollision().getCenterY();
 
-        //just init
-        for (int i = 0; i < 4 * borderTileCntHalfH; i++) {
-            AnimatedEntity tile = new AnimatedEntity(0, 0, borderTileWidthH, borderTileHeightH);
-            tile.addAnimation("border", new Animation<>(0.1f, GameAssetManager.getInstance().getElecWallHTextureRegion()));
-            borderHs.add(tile);
-        }
-        for (int i = 0; i < 4 * borderTileCntHalfV; i++) {
-            AnimatedEntity tile = new AnimatedEntity(0, 0, borderTileHeightH, borderTileWidthH);
-            tile.addAnimation("border", new Animation<>(0.1f, GameAssetManager.getInstance().getElecWallVTextureRegion()));
-            borderVs.add(tile);
-        }
         assembleBorder();
 
     }
@@ -229,6 +231,24 @@ public class ShubNiggurath extends Boss{
 
         float stY = borderCenterY - (borderTileCntHalfV) * (borderTileWidthH);
         float enY = borderCenterY + (borderTileCntHalfV) * (borderTileWidthH);
+
+        if (borderHs == null) {
+            borderHs = new ArrayList<>();
+        }
+        if (borderVs == null) {
+            borderVs = new ArrayList<>();
+        }
+        while (borderHs.size() < 4 * borderTileCntHalfH) {
+            AnimatedEntity tile = new AnimatedEntity(0, 0, borderTileWidthH, borderTileHeightH);
+            tile.addAnimation("border", new Animation<>(0.1f, GameAssetManager.getInstance().getElecWallHTextureRegion()));
+            borderHs.add(tile);
+        }
+
+        while (borderVs.size() < 4 * borderTileCntHalfV) {
+            AnimatedEntity tile = new AnimatedEntity(0, 0, borderTileHeightH, borderTileWidthH);
+            tile.addAnimation("border", new Animation<>(0.1f, GameAssetManager.getInstance().getElecWallVTextureRegion()));
+            borderVs.add(tile);
+        }
 
         for (int i = borderHs.size() - 1; i >= 4 * borderTileCntHalfH; --i) {
             borderHs.remove(i);
@@ -341,4 +361,195 @@ public class ShubNiggurath extends Boss{
         }
     }
 
+    public float getAttackDelay() {
+        return attackDelay;
+    }
+
+    public float getChargeDuration() {
+        return chargeDuration;
+    }
+
+    public float getLastAttackDiff() {
+        return lastAttackDiff;
+    }
+
+    public float getChargeStartDiff() {
+        return chargeStartDiff;
+    }
+
+    public float getDashDuration() {
+        return dashDuration;
+    }
+
+    public float getDashStartDiff() {
+        return dashStartDiff;
+    }
+
+    public boolean isInCharge() {
+        return inCharge;
+    }
+
+    public boolean isInAttack() {
+        return inAttack;
+    }
+
+    public boolean isInRun() {
+        return inRun;
+    }
+
+    public float getAttackRange() {
+        return attackRange;
+    }
+
+    public float getStopRange() {
+        return stopRange;
+    }
+
+    public float getDashExtraLength() {
+        return dashExtraLength;
+    }
+
+    public Vector2 getDashVector() {
+        return dashVector;
+    }
+
+    public Vector2 getStartDashPlace() {
+        return startDashPlace;
+    }
+
+    public int getBorderTileCntHalfH() {
+        return borderTileCntHalfH;
+    }
+
+    public int getBorderTileCntHalfV() {
+        return borderTileCntHalfV;
+    }
+
+    public float getBorderCenterX() {
+        return borderCenterX;
+    }
+
+    public float getBorderCenterY() {
+        return borderCenterY;
+    }
+
+    public int getBorderTileNumberInOneBlock() {
+        return borderTileNumberInOneBlock;
+    }
+
+    public float getBorderTileWidthH() {
+        return borderTileWidthH;
+    }
+
+    public float getBorderTileHeightH() {
+        return borderTileHeightH;
+    }
+
+    public ArrayList<AnimatedEntity> getBorderHs() {
+        return borderHs;
+    }
+
+    public ArrayList<AnimatedEntity> getBorderVs() {
+        return borderVs;
+    }
+
+    public float getLastBorderSmallingDiff() {
+        return lastBorderSmallingDiff;
+    }
+
+    public void setAttackDelay(float attackDelay) {
+        this.attackDelay = attackDelay;
+    }
+
+    public void setChargeDuration(float chargeDuration) {
+        this.chargeDuration = chargeDuration;
+    }
+
+    public void setLastAttackDiff(float lastAttackDiff) {
+        this.lastAttackDiff = lastAttackDiff;
+    }
+
+    public void setChargeStartDiff(float chargeStartDiff) {
+        this.chargeStartDiff = chargeStartDiff;
+    }
+
+    public void setDashDuration(float dashDuration) {
+        this.dashDuration = dashDuration;
+    }
+
+    public void setDashStartDiff(float dashStartDiff) {
+        this.dashStartDiff = dashStartDiff;
+    }
+
+    public void setInCharge(boolean inCharge) {
+        this.inCharge = inCharge;
+    }
+
+    public void setInAttack(boolean inAttack) {
+        this.inAttack = inAttack;
+    }
+
+    public void setInRun(boolean inRun) {
+        this.inRun = inRun;
+    }
+
+    public void setAttackRange(float attackRange) {
+        this.attackRange = attackRange;
+    }
+
+    public void setStopRange(float stopRange) {
+        this.stopRange = stopRange;
+    }
+
+    public void setDashExtraLength(float dashExtraLength) {
+        this.dashExtraLength = dashExtraLength;
+    }
+
+    public void setDashVector(Vector2 dashVector) {
+        this.dashVector = dashVector;
+    }
+
+    public void setStartDashPlace(Vector2 startDashPlace) {
+        this.startDashPlace = startDashPlace;
+    }
+
+    public void setBorderTileCntHalfH(int borderTileCntHalfH) {
+        this.borderTileCntHalfH = borderTileCntHalfH;
+    }
+
+    public void setBorderTileCntHalfV(int borderTileCntHalfV) {
+        this.borderTileCntHalfV = borderTileCntHalfV;
+    }
+
+    public void setBorderCenterX(float borderCenterX) {
+        this.borderCenterX = borderCenterX;
+    }
+
+    public void setBorderCenterY(float borderCenterY) {
+        this.borderCenterY = borderCenterY;
+    }
+
+    public void setBorderTileNumberInOneBlock(int borderTileNumberInOneBlock) {
+        this.borderTileNumberInOneBlock = borderTileNumberInOneBlock;
+    }
+
+    public void setBorderTileWidthH(float borderTileWidthH) {
+        this.borderTileWidthH = borderTileWidthH;
+    }
+
+    public void setBorderTileHeightH(float borderTileHeightH) {
+        this.borderTileHeightH = borderTileHeightH;
+    }
+
+    public void setBorderHs(ArrayList<AnimatedEntity> borderHs) {
+        this.borderHs = borderHs;
+    }
+
+    public void setBorderVs(ArrayList<AnimatedEntity> borderVs) {
+        this.borderVs = borderVs;
+    }
+
+    public void setLastBorderSmallingDiff(float lastBorderSmallingDiff) {
+        this.lastBorderSmallingDiff = lastBorderSmallingDiff;
+    }
 }

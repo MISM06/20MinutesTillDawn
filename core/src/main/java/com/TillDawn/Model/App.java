@@ -1,5 +1,6 @@
 package com.TillDawn.Model;
 
+import com.TillDawn.Model.Enums.Screens;
 import com.TillDawn.Service.AppService;
 import com.TillDawn.Service.SaveLoadService;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,6 +26,8 @@ public class App {
     private ArrayList<User> registeredUsers = new ArrayList<>();
     private User currentUser = null;
     private boolean stayLoggedIn = false;
+    @JsonIgnore
+    private Screens currentMenu;
 
     public ArrayList<User> getRegisteredUsers() {
         return registeredUsers;
@@ -46,6 +49,11 @@ public class App {
         this.stayLoggedIn = stayLoggedIn;
     }
 
+    public Screens getCurrentMenu() {
+        return currentMenu;
+    }
 
-
+    public void setCurrentMenu(Screens currentMenu) {
+        this.currentMenu = currentMenu;
+    }
 }

@@ -19,7 +19,7 @@ public class EnemyManager {
     private ArrayList<Enemy> trees = new ArrayList<>();
 //    @JsonIgnore
     private ArrayList<Enemy> normalEnemy = new ArrayList<>();
-    @JsonIgnore
+//    @JsonIgnore
     private ArrayList<Boss> bosses = new ArrayList<>();
     @JsonIgnore
     private ArrayList<AnimatedEntity> xpDrops = new ArrayList<>();

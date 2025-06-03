@@ -36,7 +36,7 @@ public class PreGameMenuController {
         User user = App.getInstance().getCurrentUser();
 
         Player player = new Player(user.getId());
-        player.setHero(getSelectedHero());
+        player.setHeroType(getSelectedHero());
         player.setX(0);
         player.setY(0);
         Gun gun = new Gun(getSelectedGun());

@@ -27,7 +27,7 @@
     },
     "score" : 253563,
     "kills" : 873,
-    "liveTime" : 4521,
+    "liveTime" : 4556,
     "avatarPath" : "avatars/berserk.jpg",
     "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
     "avatarTexture" : {
@@ -50,7 +50,7 @@
       "managed" : true,
       "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 176,
+      "textureObjectHandle" : 96,
       "uwrap" : "ClampToEdge",
       "vwrap" : "ClampToEdge"
     }
@@ -105,7 +105,7 @@
       "managed" : true,
       "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 177,
+      "textureObjectHandle" : 97,
       "uwrap" : "ClampToEdge",
       "vwrap" : "ClampToEdge"
     }
@@ -160,7 +160,7 @@
       "managed" : true,
       "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 178,
+      "textureObjectHandle" : 98,
       "uwrap" : "ClampToEdge",
       "vwrap" : "ClampToEdge"
     }
@@ -215,7 +215,7 @@
       "managed" : true,
       "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 179,
+      "textureObjectHandle" : 99,
       "uwrap" : "ClampToEdge",
       "vwrap" : "ClampToEdge"
     }
@@ -248,7 +248,7 @@
     },
     "score" : 253563,
     "kills" : 873,
-    "liveTime" : 4521,
+    "liveTime" : 4556,
     "avatarPath" : "avatars/berserk.jpg",
     "outsideAvatarPath" : "E:\\PICTURE\\poker_cat.jfif",
     "avatarTexture" : {
@@ -271,7 +271,7 @@
       "managed" : true,
       "depth" : 0,
       "anisotropicFilter" : 1.0,
-      "textureObjectHandle" : 180,
+      "textureObjectHandle" : 100,
       "uwrap" : "ClampToEdge",
       "vwrap" : "ClampToEdge"
     }
